@@ -1,6 +1,6 @@
 # TwitchToolsVX - Novas Implementações
 
-- Este projeto é uma biblioteca/módulo que proporciona funcionalidades adicionais para interações com a API da Twitch, complementando a biblioteca twitch-moderation-tools e muito mais.
+- Este projeto é uma biblioteca/módulo que proporciona funcionalidades adicionais para interações com a API da Twitch, complementando a biblioteca Vitor-VX/Twitch-Tools e muito mais.
 
 ## Funcionalidades
 
