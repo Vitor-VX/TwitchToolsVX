@@ -2,6 +2,8 @@
 
 This project is a library/module that provides additional functionalities for interacting with the Twitch API, complementing the Vitor-VX/Twitch-Tools library and much more.
 
+- The library includes all the features/functions from the [twitch-moderation-tools](https://www.npmjs.com/package/twitch-moderation-tools), library, making it an add-on to this library.
+
 ## Functionalities
 
 ### `SetTitleLive(authTokenMain, channel, title, botChannel = false)`
