@@ -1,5 +1,5 @@
 const TwitchToolsVX = require("TwitchToolsVX");
-const TwitchEx = new TwitchToolsVX("y4e5fdxny4uznja9il2lnyiotgaw5t", "faxsoydixvpqrncuis1a76u6czvxhr");
+const TwitchEx = new TwitchToolsVX("__TOKEN__", "client-id");
 
 const tmi = require('tmi.js');
 const TwitchClient = tmi.Client({
