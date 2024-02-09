@@ -1,74 +1,72 @@
-# TwitchToolsVX - Novas Implementações
+# TwitchToolsVX - New Implementations
 
-Este projeto é uma biblioteca/módulo que proporciona funcionalidades adicionais para interações com a API da Twitch, complementando a biblioteca Vitor-VX/Twitch-Tools e muito mais.
+This project is a library/module that provides additional functionalities for interacting with the Twitch API, complementing the Vitor-VX/Twitch-Tools library and much more.
 
-## Funcionalidades
+## Functionalities
 
 ### `SetTitleLive(authTokenMain, channel, title, botChannel = false)`
-Define o título de uma transmissão ao vivo.
+Sets the title of a live stream.
 
-**Exemplo de Uso:**
+**Usage Example:**
 ```javascript
-SetTitleLive('authToken', 'channelName', 'Novo Título da Live');
+SetTitleLive('authToken', 'channelName', 'New Live Title');
 ```
 
 ### `SetTegLive(authTokenMain, channel, teg, botChannel = false)`
-Define a tag de uma transmissão ao vivo.
+Sets the tag of a live stream.
 
-**Exemplo de Uso:**
+**Usage Example:**
 ```javascript
-SetTegLive('authToken', 'channelName', 'nova-tag');
+SetTegLive('authToken', 'channelName', 'new-tag');
 ```
 
 ### `GetTokenTwitchDevice(waitTimeInSeconds, scopes = [])`
-Obtém um token de autenticação usando o fluxo de dispositivo OAuth da Twitch.
+Obtains an authentication token using the Twitch device OAuth flow.
 
-**Exemplo de Uso:**
+**Usage Example:**
 ```javascript
 GetTokenTwitchDevice(30, ['channel:manage:broadcast']);
 ```
 
 ### `RefreshToken(refreshToken, clientSecret)`
-Atualiza um token de autenticação usando um token de atualização.
+Refreshes an authentication token using a refresh token.
 
-**Exemplo de Uso:**
+**Usage Example:**
 ```javascript
 RefreshToken('refreshToken', 'clientSecret');
 ```
 
-### Funcionalidades Adicionais
+### Additional Functionalities
+In addition to the functionalities mentioned above, this library also includes custom features that I developed myself and that can be useful, such as:
 
-Além das funcionalidades mencionadas acima, esta biblioteca também inclui recursos personalizados que eu mesmo desenvolvi e que podem ser úteis, tais como:
+- `RemoveSpamCaules(channel, botModerator, message, tags)`: Removes messages containing spam keywords.
+- `BanSpamCaules(channel, botModerator, userBanned, message)`: Bans users who sent messages containing spam keywords.
+- `RemoveMessageSwearWord(channel, botModerator, tags, message)`: Removes messages containing swear words.
+- `BanSwearWord(channel, botModerator, userBanned, message)`: Bans users who sent messages containing swear words.
 
-- `RemoveSpamCaules(channel, botModerator, message, tags)`: Remove mensagens que contenham caules de spam.
-- `BanSpamCaules(channel, botModerator, userBanned, message)`: Bane usuários que enviaram mensagens contendo caules de spam.
-- `RemoveMessageSwearWord(channel, botModerator, tags, message)`: Remove mensagens que contenham palavras consideradas palavrões.
-- `BanSwearWord(channel, botModerator, userBanned, message)`: Bane usuários que enviaram mensagens contendo palavras consideradas palavrões.
+These additional functionalities were developed by myself using custom libraries like npm i swearguard-vx, which checks for swear words in strings, and are "not part of" the standard Twitch functionalities.
 
-Estas funcionalidades adicionais foram desenvolvidas por mim mesmo, utilizando bibliotecas próprias como a `npm i swearguard-vx`, que verifica palavrões nas strings, e não "fazem parte" das funcionalidades padrão da Twitch.
+These functionalities are useful for moderating and managing live streams on the Twitch platform. The TwitchToolsVX class provides a convenient interface for interacting with the Twitch API and performing various moderation and content management operations.
 
-Essas funcionalidades são úteis para moderar e gerenciar transmissões ao vivo na plataforma Twitch. A classe TwitchToolsVX fornece uma interface conveniente para interagir com a API da Twitch e realizar várias operações de moderação e gerenciamento de conteúdo.
-
-## Instalação
-
-Para instalar a biblioteca, você pode usar o npm. Execute o seguinte comando:
+## Installation
+To install the library, you can use npm. Run the following command:
 
 ```bash
 npm i twitch-tools-vx
 ```
 
-## Importante
+## Important
 
-Para usar as funções SetTitleLive ou SetTegLive, é necessário obter o token do próprio canal que deseja modificar. Isso ocorre porque a Twitch separa as funcionalidades entre aquelas que um token pode realizar e aquelas que só podem ser realizadas com o token do canal específico. Por exemplo, se meu bot é chamado de StreamSquawk e desejo alterar o título ou a tag do canal chamado jvzx_, só conseguirei fazer isso com o token do próprio canal jvzx_, não com o token do StreamSquawk.
+To use the SetTitleLive or SetTegLive functions, you need to obtain the token of the channel you want to modify. This is because Twitch separates functionalities between those that a token can perform and those that can only be performed with the token of the specific channel. For example, if my bot is called StreamSquawk and I want to change the title or tag of the channel called jvzx_, I can only do that with the token of the jvzx_ channel, not with the token of StreamSquawk.
 
-Caso queira obter o token do CANAL para utilizar as duas funções, utilize o seguinte escopo:
+If you want to obtain the CHANNEL token to use both functions, use the following scope:
 
 ```
 scope=channel:manage:broadcast
 ```
 
-Para exemplificar, se eu utilizar as duas funções para tentar alterar o título ou a tag da transmissão ao vivo, utilizando o token do meu bot StreamSquawk, o título ou a tag serão alterados no CANAL do meu bot.
+For example, if I use both functions to try to change the title or tag of the live stream using the token of my bot StreamSquawk, the title or tag will be changed in the CHANNEL of my bot.
 
-## Observation
+## Observação - PT-BR
 
-The complete documentation in English is available in the docs/english folder.
+A documentação completa em português-br está disponível na pasta docs/ptbr.
