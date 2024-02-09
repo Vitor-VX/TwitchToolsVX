@@ -4,6 +4,18 @@ This project is a library/module that provides additional functionalities for in
 
 - The library includes all the features/functions from the [twitch-moderation-tools](https://www.npmjs.com/package/twitch-moderation-tools), library, making it an add-on to this library.
 
+**Examples:**
+```javascript
+
+const Twitch = require("twitch-tools-vx");
+
+const TwitchTools = new Twitch('__TOKEN__', '__CLIENT-ID__');
+
+TwitchTools.TwitchModeration.AddBlockedTerm();
+TwitchTools.TwitchModeration.BanUser();
+TwitchTools.TwitchModeration.TimeoutUser();
+```
+
 ## Functionalities
 
 ### `SetTitleLive(authTokenMain, channel, title, botChannel = false)`
