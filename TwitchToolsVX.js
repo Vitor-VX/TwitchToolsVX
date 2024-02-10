@@ -146,6 +146,19 @@ class TwtchToolsVX {
             return HandleError(error, null);
         }
     }
+
+    async StreamerIsLive(streamer) {
+        try {
+            const response = await axios.get(`https://api.twitch.tv/helix/streams?user_login=${streamer}`,
+                {
+                    headers: this.headers
+                });
+
+            return response && response.data.data.length > 0;
+        } catch (error) {
+            return HandleError(error, null);
+        }
+    }
 }
 
 module.exports = TwtchToolsVX;
