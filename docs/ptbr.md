@@ -39,7 +39,7 @@ Obtém um token de autenticação usando o fluxo de dispositivo OAuth da Twitch.
 
 **Exemplo de Uso:**
 ```javascript
-GetTokenTwitchDevice(30, ['channel:manage:broadcast']);
+GetTokenTwitchDevice(30000 /* 30s */, ['channel:manage:broadcast']);
 ```
 
 ### `RefreshToken(refreshToken, clientSecret)`
